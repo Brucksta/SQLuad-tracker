@@ -1,0 +1,24 @@
+{
+  "name": "sqluad-tracker",
+  "version": "1.0.0",
+  "description": "allows user to track team",
+  "main": "questions.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brucksta/SQLuad-tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Brucksta/SQLuad-tracker/issues"
+  },
+  "homepage": "https://github.com/Brucksta/SQLuad-tracker#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "inquirer": "^8.1.0",
+    "mysql": "^2.18.1"
+  }
+}
