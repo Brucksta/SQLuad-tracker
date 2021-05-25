@@ -2,7 +2,7 @@ const mysql = require('mysql');
 require('dotenv').config();
 
 const connection = mysql.createConnection({
-  host: 'localhost',
+  host: process.env.DB_HOST,
 
   // Your port; if not 3306
   port: process.env.DB_PORT,
