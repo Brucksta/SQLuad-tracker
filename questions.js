@@ -5,7 +5,9 @@ const viewRoles = require('./lib/viewRoles')
 const generateEmployee = require('./lib/generateEmployee');
 const generateDepartment = require('./lib/generateDepartment');
 const generateRole = require('./lib/generateRole');
-const { queryAllEmployees } = require('./lib/updateEmployeeRole')
+const { queryRoles, queryAllEmployees, updateEmployeeRole } = require('./lib/updateEmployeeRole');
+const { queryDB } = require('./utils');
+
 
 const VIEW_EMPLOYEES = "VIEW_EMPLOYEES";
 const VIEW_DEPARTMENTS = "VIEW_DEPARTMENTS";
@@ -94,7 +96,8 @@ const start = async () => {
         name: "newRole",
         type: 'list',
         message: "What role would you like to allocate them?",
-        when: (answers) => answers.choice === UPDATE_ROLE
+        when: (answers) => answers.choice === UPDATE_ROLE,
+        choices: await queryRoles,
     },
     ]);
     return answers;
@@ -124,12 +127,13 @@ async function init() {
             generateRole(answers.roleTitle, answers.roleSalary, answers.roleSalary);
             break;
         case UPDATE_ROLE:
-            queryAllEmployees();
+           updateEmployeeRole(answers.whichEmployee, answers.newRole)
     
         default:
             break;
     }
     init();
 }
+
 
 module.exports = init;
