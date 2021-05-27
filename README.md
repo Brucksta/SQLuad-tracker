@@ -1,6 +1,6 @@
 ## SQLuad-tracker
 
-Link to deployed app : https://pb-express-notes.herokuapp.com/
+
 
 ## Description:
 Welcome to the (SQL)uad tracker! The (SQL)uad tracker is a commandline prompt app that will display a database of employees, departments and roles. Doing so will help any employer with keeping tabs on employees roles, salaries, dapartments etc. Simply running the app, the user is prompted with VIEW options, allowing them to view employees, roles and departments. They will also have an ADD option, allowing them to add employees, roles and departments, and they are also prompted with a change role option, if they want to allocate a new role to an employee. 
