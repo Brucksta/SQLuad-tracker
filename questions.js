@@ -5,8 +5,7 @@ const viewRoles = require('./lib/viewRoles')
 const generateEmployee = require('./lib/generateEmployee');
 const generateDepartment = require('./lib/generateDepartment');
 const generateRole = require('./lib/generateRole');
-const queryAllEmployees = require('./lib/updateEmployeeRole')
-const employeeList = require('./lib/updateEmployeeRole')
+const { queryAllEmployees } = require('./lib/updateEmployeeRole')
 
 const VIEW_EMPLOYEES = "VIEW_EMPLOYEES";
 const VIEW_DEPARTMENTS = "VIEW_DEPARTMENTS";
@@ -89,7 +88,7 @@ const start = async () => {
         type: 'list',
         message: "Who would you like to update?",
         when: (answers) => answers.choice === UPDATE_ROLE,
-        choices: [employeeList]
+        choices: await queryAllEmployees,
     },
     {
         name: "newRole",
@@ -125,7 +124,7 @@ async function init() {
             generateRole(answers.roleTitle, answers.roleSalary, answers.roleSalary);
             break;
         case UPDATE_ROLE:
-            roleChange();
+            queryAllEmployees();
     
         default:
             break;
