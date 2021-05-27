@@ -12,7 +12,7 @@ CREATE TABLE department (
     PRIMARY KEY (id)
 );
 
-CREATE TABLE employee (
+CREATE TABLE role (
     id INT AUTO_INCREMENT NOT NULL,
 
     title VARCHAR(30) NOT NULL,
@@ -24,7 +24,7 @@ CREATE TABLE employee (
     PRIMARY KEY (id)
 );
 
-CREATE TABLE role (
+CREATE TABLE employee (
     id INT AUTO_INCREMENT NOT NULL,
 
     first_name VARCHAR(30) NOT NULL,
